@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Privacy Policy — Personal Discord SMS Notification Bot</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; }
+  h1, h2 { border-bottom: 1px solid #eee; padding-bottom: 0.3rem; }
+  a { color: #0366d6; }
+  code { background: #f4f4f4; padding: 0 0.3em; border-radius: 3px; }
+</style>
+</head>
+<body>
+<p><a href="./">← Home</a></p>
+<h1>Privacy Policy</h1>
+<p><strong>Service:</strong> Personal Discord SMS Notification Bot</p>
+<p><strong>Operator:</strong> Jon Wetzler</p>
+<p><strong>Contact:</strong> jonjayj@gmail.com</p>
+<p><strong>Last updated:</strong> May 12, 2026</p>
+
+<h2>1. Overview</h2>
+<p>This service is an automated application-to-person (A2P) notification system operated by a single individual for their own personal use. There are no external users, customers, or third-party recipients. Messages are sent exclusively to the operator's own verified mobile number. This service is not commercial and is not offered to the public.</p>
+
+<h2>2. Information Collected</h2>
+<p>The application reads message content from channels in a private Discord server that the operator owns and administers. Specifically, the application reads:</p>
+<ul>
+  <li>Message text</li>
+  <li>Channel name and ID</li>
+  <li>Author display name</li>
+  <li>Attachment count (presence only, not contents)</li>
+</ul>
+<p>No data from any other Discord server or any other user is collected.</p>
+
+<h2>3. How Information Is Used</h2>
+<p>The collected information is used solely to construct an SMS notification that is sent to the operator's own mobile number, alerting them of activity in their own Discord server. The data is:</p>
+<ul>
+  <li>Not persistently stored beyond transient in-memory processing during the API call</li>
+  <li>Not sold, shared, analyzed, or used for marketing</li>
+  <li>Not shared with any third party other than the SMS carrier (Twilio) required to deliver the message</li>
+</ul>
+
+<h2>4. Data Sharing</h2>
+<p>Message data flows only between the following systems, all operated by or on behalf of the operator:</p>
+<ul>
+  <li>Discord API (source of the message)</li>
+  <li>The application running on Railway cloud infrastructure (the operator's deployment)</li>
+  <li>Twilio API (the SMS carrier delivering the notification)</li>
+  <li>The operator's own mobile device</li>
+</ul>
+<p>Twilio's handling of message data is governed by <a href="https://www.twilio.com/legal/privacy">Twilio's privacy policy</a>.</p>
+
+<h2>5. Recipients</h2>
+<p>The application is hardcoded to send to a single configured phone number, which belongs to the operator and has been verified with Twilio as a Verified Caller ID. No other recipient can receive messages without the operator redeploying the application with a different configured number.</p>
+
+<h2>6. Consent and Opt-Out</h2>
+<p>Consent to receive messages is established by the operator configuring their own phone number into the application's environment variable <code>SMS_TO_NUMBER</code> at deployment time. The operator can stop receiving messages at any time by:</p>
+<ul>
+  <li>Replying <strong>STOP</strong> to any message (handled by Twilio's standard STOP filter)</li>
+  <li>Removing or changing the <code>SMS_TO_NUMBER</code> environment variable in the application's hosting platform</li>
+  <li>Stopping or deleting the application deployment</li>
+</ul>
+<p>The operator may reply <strong>HELP</strong> for assistance per Twilio defaults.</p>
+
+<h2>7. Data Retention</h2>
+<p>The application does not retain message data. Hosting platform logs may briefly capture diagnostic information for operational debugging, retained per Railway's standard log retention policy.</p>
+
+<h2>8. Contact</h2>
+<p>Questions about this policy can be directed to jonjayj@gmail.com.</p>
+</body>
+</html>
